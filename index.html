@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookShop</title>
+    <link rel="icon" href="assets/books-stack-of-three.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <img
+        class="navBarLogo"
+        src="assets/bookshop-logo-dark_orig.png"
+        alt="bookShopLogo"
+      />
+      <div id="searchPart">
+        <input
+          readonly
+          class="searchInput"
+          type="text"
+          placeholder="searching for books ..."
+          title="you can search when the books are delivered"
+        />
+        <div>
+          <img src="assets/search.png" alt="searchingBooks" />
+        </div>
+      </div>
+      <nav>
+        <button class="basket" data-basketBook="0">
+          <span class="basketText">basket |</span>
+          <span class="basketIcon">
+            <img src="assets/shopping-cart.png" alt="basketCollector" />
+          </span>
+        </button>
+        <button class="fetchingData">storeData</button>
+      </nav>
+    </header>
+    <section id="bookListsSection"></section>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>

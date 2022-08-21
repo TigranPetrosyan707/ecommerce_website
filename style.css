@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=DynaPuff:wght@600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+  width: 100%;
+  background-color: rgba(188, 183, 203, 0.8);
+}
+
+.navBarLogo {
+  width: 200px;
+}
+
+.fetchingData {
+  border: none;
+  padding: 9px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: transparent;
+  color: black;
+  font-weight: 700;
+  font-family: "DynaPuff", cursive;
+}
+
+.fetchingData:hover {
+  background-color: rgba(188, 183, 203, 0.8);
+}
+
+.basket {
+  border: none;
+  padding: 9px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: rgba(188, 183, 203, 0.8);
+  color: black;
+  font-weight: 700;
+  position: relative;
+  font-family: "DynaPuff", cursive;
+}
+
+.basket::before {
+  content: attr(data-basketBook);
+  position: absolute;
+  top: -0.75em;
+  right: -14px;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: cornflowerblue;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.basketIcon {
+  position: absolute;
+  top: 5px;
+  right: 9px;
+  transition: 0.5s;
+}
+
+.basket:hover .basketIcon {
+  transform: translateX(4px);
+}
+
+.basketText {
+  margin-right: 12px;
+}
+
+#searchPart {
+  background-color: rgba(188, 183, 203, 0.8);
+  width: 30%;
+  padding: 9px 25px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.searchInput {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  flex: 1;
+  font-family: "DynaPuff", cursive;
+}
+
+::placeholder {
+  background-image: linear-gradient(to right, #0099f7, #f11712);
+  font-family: "DynaPuff", cursive;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#bookListsSection {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.bookCard {
+  position: relative;
+  width: 250px;
+}
+
+.bookInfo {
+  text-align: center;
+  font-family: "DynaPuff", cursive;
+  padding: 5px;
+}
+
+.bookInfo p {
+  padding: 3px;
+}
+
+.bookTitle {
+  font-weight: 700;
+}
+
+.bookCardHeader img {
+  transition: 0.7s;
+}
+
+.bookCardHeader:hover img {
+  transform: scale(1.05);
+}
+
+.likeSymbol {
+  position: absolute;
+  top: 12px;
+  right: 33px;
+  opacity: 0;
+}
+
+.likeSymbolRed {
+  position: absolute;
+  background-image: url("./assets/heart\ \(1\).png");
+  top: 12px;
+  right: 33px;
+  opacity: 0;
+}
+
+.addMe {
+  position: absolute;
+  top: 11px;
+  left: -1px;
+  opacity: 0;
+}
+
+.bookCard:hover .likeSymbol {
+  opacity: 1;
+  transition: 1.2s;
+}
+
+.bookCard:hover .likeSymbolRed {
+  opacity: 1;
+  transition: 1.2s;
+}
+
+.bookCard:hover .addMe {
+  opacity: 1;
+  transition: 1.2s;
+}
+
+.loadImg {
+  margin-top: 170px;
+  animation: loadingAnime 4s infinite;
+}
+
+@keyframes loadingAnime {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.popUpBasket {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 460px;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+  transition: 0.3s;
+}
+
+.popUpTitle {
+  font-family: "DynaPuff", cursive;
+  background-image: linear-gradient(to right, #0099f7, #f11712);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+  top: 10px;
+  right: 116px;
+}
+
+.bookBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bookBox img {
+  width: 100px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.bookBoxInfo {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.bookBoxTitle {
+  padding: 5px;
+}
+
+.bookBoxPrice {
+  font-family: "DynaPuff", cursive;
+}
+
+.removeBookBox {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: red;
+  font-family: "DynaPuff", cursive;
+  cursor: pointer;
+}
+
+.totalPurchases {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30px;
+  border-top: 2px solid black;
+}
+
+.total-title {
+  margin-right: 20px;
+  font-family: "DynaPuff", cursive;
+}
+
+.buyBooks {
+  display: flex;
+  margin: 0 auto;
+  border: none;
+  background-color: transparent;
+  font-family: "DynaPuff", cursive;
+  font-size: 20px;
+  cursor: pointer;
+  background-image: linear-gradient(to right, #0099f7, #f11712);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.closePopUpBasket {
+  position: absolute;
+  top: 7px;
+  left: 9px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: #f11712;
+  cursor: pointer;
+  font-family: "DynaPuff", cursive;
+  font-size: 22px;
+}
