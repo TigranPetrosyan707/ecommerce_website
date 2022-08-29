@@ -62,6 +62,7 @@ const createBookList = ({ src, title, author, price }) => {
   });
 
   addBasket.addEventListener("click", (e) => {
+    e.stopImmediatePropagation();
     let bookContent = `
     <div class = "purchaseBooks"> 
 
@@ -85,6 +86,7 @@ const createBookList = ({ src, title, author, price }) => {
     let removeBookBox = document.querySelector(".removeBookBox");
     removeBookBox.addEventListener("click", (e) => {
       e.target.parentElement.remove();
+      basketButton.dataset.basketbook--;
     });
   });
 
